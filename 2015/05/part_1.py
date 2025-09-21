@@ -14,13 +14,17 @@ def is_nice(string):
 
     # check letter pairs in loop
     for i in range(len(string) - 1):
-        if string[i] in 'aeuio': vowels += 1
+        if string[i] in 'aeuio':
+            vowels += 1
         # vowels are checked in single, so check the last char separately
-        if i == len(string) - 2 and string[i + 1] in 'aeuio': vowels += 1
+        if i == len(string) - 2 and string[i + 1] in 'aeuio':
+            vowels += 1
 
-        if string[i] == string[i + 1]: double = True
+        if string[i] == string[i + 1]:
+            double = True
 
-        if string[i:i + 2] in ('ab', 'cd', 'pq', 'xy'): pairs = True
+        if string[i:i + 2] in ('ab', 'cd', 'pq', 'xy'):
+            pairs = True
 
     return all((vowels >= 3, double, not pairs))
 

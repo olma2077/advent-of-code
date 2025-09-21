@@ -10,10 +10,12 @@ INPUT = [
 def solver(filename):
     def get_trail_score(x, y, summits, level = 0):
         # out of map
-        if x < 0 or y < 0 or x == n or y == m: return 0
+        if x < 0 or y < 0 or x == n or y == m:
+            return 0
 
         # trail is not uphill
-        if topo[x][y] != level: return 0
+        if topo[x][y] != level:
+            return 0
 
         # trail is complete, remember reached summit
         if topo[x][y] == 9:

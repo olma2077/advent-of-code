@@ -43,7 +43,7 @@ def solver(filename):
                 case other:
                     print(f'Parsing error: {other}')
 
-    return sum(sum(1 for l in row if l) for row in lights)
+    return sum(sum(1 for light in row if light) for row in lights)
 
 
 for filename in INPUT:

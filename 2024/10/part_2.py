@@ -10,13 +10,16 @@ INPUT = [
 def solver(filename):
     def get_trail_raiting(x, y, level = 0):
         # out of map
-        if x < 0 or y < 0 or x == n or y == m: return 0
+        if x < 0 or y < 0 or x == n or y == m:
+            return 0
 
         # trail is not uphill
-        if topo[x][y] != level: return 0
+        if topo[x][y] != level:
+            return 0
 
         # trail is complete
-        if topo[x][y] == 9: return 1
+        if topo[x][y] == 9:
+            return 1
 
         # directions to move in loop
         delta = [(1, 0), (0, 1), (-1, 0), (0, -1)]

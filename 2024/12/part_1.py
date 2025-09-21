@@ -10,11 +10,14 @@ INPUT = [
 def detect_regions(garden):
     '''DP with tracking visied pots'''
     def get_region(i, j, pot):
-        if i < 0 or j < 0 or i == n or j == m: return []
+        if i < 0 or j < 0 or i == n or j == m:
+            return []
 
-        if visited[i][j]: return []
+        if visited[i][j]:
+            return []
 
-        if garden[i][j] != pot: return []
+        if garden[i][j] != pot:
+            return []
 
         visited[i][j] = True
 

@@ -12,7 +12,8 @@ def solver(filename):
     def is_valid(seq):
         '''DP approach to check if print sequence is valid'''
         # single (last) page is always a valid sequence
-        if len(seq) == 1: return True
+        if len(seq) == 1:
+            return True
 
         # NB rules are exhaustive: if B can be after B, there is a rule for it
         # there are no implicit rules like if A|B and B|C then A|C
@@ -51,14 +52,14 @@ def solver(filename):
                 # we've scanned all rules
                 rules = False
 
-            elif rules == True:
+            elif rules:
                 # scan order rules in a following dict:
                 # key: preceding page
                 # value: list of allowed following pages
                 x, y = [int(a) for a in line.split('|')]
                 order[x].append(y)
 
-            elif rules == False:
+            elif not rules:
                 # scan print sequences
                 prints.append([int(a) for a in line.split(',')])
 
