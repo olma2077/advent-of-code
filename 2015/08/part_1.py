@@ -10,17 +10,18 @@ INPUT = [
 def repr_count(string):
     count = 0
 
+    # skip outer "" symbols
     i = 1
     while i < len(string) - 1:
+        # skip escaped octets \xHH
         if string[i:i + 2] == "\\x":
-            count += 1
-            i += 4
+            i += 3
+        # skip escaped \ and "
         elif string[i] == "\\":
-            count += 1
-            i += 2
-        else:
-            count += 1
             i += 1
+
+        count += 1
+        i += 1
 
     return count
 

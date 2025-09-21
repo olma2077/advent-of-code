@@ -8,17 +8,16 @@ INPUT = [
 
 
 def enc_count(string):
+    # add outer "" symbols for a string
     count = 2
 
     i = 0
     while i < len(string):
+        # escape \ and "
         if string[i] in ("\\", "\""):
-            count += 2
-        elif string[i] == "\\":
             count += 1
-            i += 2
-        else:
-            count += 1
+
+        count += 1
         i += 1
 
     return count
