@@ -9,6 +9,10 @@ INPUT = [
 
 def solver(filename):
     # here goes a solution
+    # with open(filename) as file:
+    #     line = file.readline()
+    # or
+    #     for line in file:
     ...
 
 
