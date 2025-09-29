@@ -1,6 +1,5 @@
 import json
 import os
-import re
 import time
 
 INPUT = [
@@ -37,8 +36,6 @@ def solver(filename):
         string = file.readline()
 
     ledger = json.loads(string)
-    for item in ledger:
-        total += evaluate(item)
 
     return sum([evaluate(item) for item in ledger])
 
